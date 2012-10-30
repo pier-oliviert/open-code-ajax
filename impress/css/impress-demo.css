@@ -693,19 +693,10 @@ a:focus {
 .impress-enabled          { pointer-events: none }
 .impress-enabled #impress { pointer-events: auto }
 
-/*
-    There is one funny thing I just realized.
-    
-    Thanks to this workaround above everything except #impress element is invisible
-    for click events. That means that the hint element is also not clickable.
-    So basically all of this transforms and delayed transitions trickery was probably
-    not needed at all...
-    
-    But it was fun to learn about it, wasn't it?
-*/
+ul {
+    padding: 30px 0 0;
+}
 
-/*
-    That's all I have for you in this file.
-    Thanks for reading. I hope you enjoyed it at least as much as I enjoyed writing it
-    for you.
-*/
+ul li {
+    padding: 5px 0;
+}
