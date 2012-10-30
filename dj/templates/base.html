@@ -1,0 +1,16 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ site.name }}</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}js/todos.js"></script>
+
+    <link rel="stylesheet" href="{{STATIC_URL}}css/todos.css" media="all" type="text/css">
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

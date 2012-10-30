@@ -1,0 +1,9 @@
+<%= form_for todo, :html => { :class => "clear" }, :remote => true do |f| %>
+	
+	<div class="uiErrors"><%= todo.errors.full_messages.join(". ") %></div>
+    
+    <div class="uiWrapper">
+        <%= f.text_field :title %>
+    </div>
+    <input type="submit" value="Ajouter" />
+<% end %>

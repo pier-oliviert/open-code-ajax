@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+<h1>Todos</h1>
+
+{% include "TodoBundle:Default:form.html.twig" with {'form': form} %}
+
+<ul id="todos">
+    {% for todo in todos %}
+        {% include "TodoBundle:Default:todo.html.twig" with {'todo': todo} %}
+    {% endfor %}
+</ul>
+{% endblock %}

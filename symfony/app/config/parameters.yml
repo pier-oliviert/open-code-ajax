@@ -1,0 +1,15 @@
+parameters:
+    database_driver:   pdo_sqlite
+    database_host:     localhost
+    database_port:     ~
+    database_path:     %kernel.root_dir%/db/todo.db
+    database_user:     pothibo
+    database_password: ~
+
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+    secret:            J%hKDSNL$kas@dli!as*d)aso9u3(1NUY$QJ;lmL9uNÙ_90183JHG

@@ -1,0 +1,9 @@
+<form action="{{ path('create_todo') }}" method="post" {{ form_enctype(form) }} data-remote="true" class="clear">
+	<div class="uiErrors">
+		{{ form_errors(form) }}
+	</div>
+    <div class="uiWrapper">
+    	{{ form_widget(form.title) }}
+    </div>
+    <input type="submit" value="Ajouter" />
+</form>

@@ -1,0 +1,3 @@
+todo:
+    resource: "@TodoBundle/Controller/DefaultController.php"
+    type: annotation

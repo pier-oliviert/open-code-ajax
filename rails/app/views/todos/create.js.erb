@@ -1,0 +1,14 @@
+(function() {
+
+<% if @todo.errors.blank? %>
+	$("form .uiErrors").html("")
+	$("form input[type=text]").val("")
+	$("#todos").append("<%= j render('todos/todo', :todo => @todo) %>")
+
+<% else %>
+
+	$("form .uiErrors").html("<%= j @todo.errors.full_messages.join(". ") %>")
+
+<% end %>
+
+})()

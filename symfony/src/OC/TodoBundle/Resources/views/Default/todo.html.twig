@@ -1,0 +1,6 @@
+<li id="todo-{{todo.id}}">
+	<p>{{todo.title}}</p>
+	<form action="todo/{{todo.id}}/done" method="GET" data-remote="true">
+		<button>Done</button>
+	</form>
+</li>

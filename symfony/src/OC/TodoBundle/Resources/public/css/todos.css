@@ -1,0 +1,86 @@
+body {
+  background: #e7e7e7;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+  color: #b1b1b1;
+  text-shadow: 0 1px white;
+}
+
+body > form {
+  width: 300px;
+  min-height: 40px;
+  margin: 0 auto;
+}
+
+body > form > * {
+  float: left;
+  width: 20%;
+}
+
+body > form > .uiErrors {
+  width: 100%;
+  min-height: 30px;
+  color: #D64F4F;
+}
+
+body > form > .uiErrors ul {
+  padding: 0 0 2px 10px;
+}
+
+body > form > .uiErrors ul li {
+  list-style-type: none;
+  color: #D64F4F;
+}
+
+body > form > *.uiWrapper {
+  width: 80%;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 10px 0;
+}
+
+body > form > *.uiWrapper input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+#todos {
+  width: 300px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#todos li {
+  position: relative;
+  padding: 8px 0;
+  list-style-type: none;
+  border-bottom: 1px solid #c1c1c1;
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.2);
+}
+
+#todos li p {
+  padding: 0 20px 0 0;
+  margin: 0;
+}
+
+#todos li > form {
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+
+
+.clear:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+ 

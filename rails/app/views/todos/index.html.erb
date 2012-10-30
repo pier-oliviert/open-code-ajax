@@ -1,0 +1,9 @@
+<h1>Todos</h1>
+
+<%= render "form", :todo => @todo %>
+
+<ul id="todos">
+    <% @todos.each do |todo| %>
+        <%= render "todo", :todo => todo %>
+    <% end %>
+</ul>

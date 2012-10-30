@@ -1,0 +1,6 @@
+<li id="todo-<%= todo.id %>">
+	<p><%= todo.title %></p>
+	<%= form_tag finished_todo_path(todo), :method => :get, :remote => true do %>
+		<%= button_tag "Done" %>
+	<% end %>
+</li>

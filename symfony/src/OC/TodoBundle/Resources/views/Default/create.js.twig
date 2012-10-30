@@ -1,0 +1,17 @@
+(function() {
+{% if form['title'].hasErrors %}
+	var messages = []
+
+	{% for error in form['title'].errors %}
+		var msg = "{{ error.getMessage }}"
+		messages.push(msg)
+	{% endfor %}
+
+	$("body > form > .uiErrors").html(messages.join(""))
+
+{% else %}
+	$("body > form > .uiErrors").html("")
+	$("body > form input[type='text']").val("")
+	$("#todos").append("{% filter escape('js')%}{% include "TodoBundle:Default:todo.html.twig" with {'todo': todo} %}{% endfilter %}")
+{% endif %}
+})()
