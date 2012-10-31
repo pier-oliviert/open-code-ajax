@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Todos</h1>
+
+    {% include "form.html" %}
+    
+    <ul id="todos">
+        {% for todo in todos %}
+            
+        {% endfor %}
+    </ul>
+{% endblock %}
