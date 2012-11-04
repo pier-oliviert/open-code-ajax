@@ -17,8 +17,9 @@ Création de la base de données
 
 Dans le commandprompt::
     
-    from models import init_db
-    init_db()
+    python
+    >>> from models import init_db
+    >>> init_db()
 
 Démarrer le serveur web de test
 ===============================
