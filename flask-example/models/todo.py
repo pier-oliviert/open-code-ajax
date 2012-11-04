@@ -1,9 +1,7 @@
-#encoding: utf-8
+#coding: utf-8
 
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Boolean
-
-Base = declarative_base()
+from . import Base
 
 class Todo(Base): 
     __tablename__ = "todo"

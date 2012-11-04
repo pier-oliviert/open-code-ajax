@@ -2,6 +2,7 @@
     <div class="uiErrors"></div>
 
     <div class="uiWrapper">
+        {{ form.render( exclude=["done"] ) | safe }}
     </div>
     <input type="submit" value="Ajouter" />
 </form>
