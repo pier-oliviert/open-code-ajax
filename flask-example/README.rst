@@ -8,7 +8,7 @@ Une démo dans la même lignée que @pothibo a fait pour ces apps Django, RoR & 
 Installation des dépendances
 ============================
 
-Avec pip::
+Dans le commandprompt:
     pip install -r requirements.txt
 
 Création de la base de données
@@ -16,11 +16,11 @@ Création de la base de données
 
 Dans le commandprompt:
     python
-    >>> from models import init_db
-    >>> init_db()
+    from models import init_db
+    init_db()
 
 Démarrer le serveur web de test
 ===============================
 
-Dans le commandprompt::
+Dans le commandprompt:
     python __init__.py
