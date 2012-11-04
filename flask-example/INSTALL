@@ -1,1 +1,5 @@
+# install the projects requirements
 pip install -r requirements.txt
+
+# start the dev webserver on port 5000
+python __init__.py
