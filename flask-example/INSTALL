@@ -1,5 +1,10 @@
-# install the projects requirements
+# Installing the project's dependancies
 pip install -r requirements.txt
 
-# start the dev webserver on port 5000
+# Creating the database
+python
+>>> from models import init_db
+>>> init_db()
+
+# Starting the dev webserver on port 5000
 python __init__.py

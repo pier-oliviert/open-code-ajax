@@ -6,6 +6,7 @@ from sqlalchemy import Column, Integer, String, Boolean
 Base = declarative_base()
 
 class Todo(Base): 
+    __tablename__ = "todo"
     id = Column("id", Integer, primary_key = True)
     title = Column("title", String(100))
     done = Column("done", Boolean, default = False)
