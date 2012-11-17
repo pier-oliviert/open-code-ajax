@@ -7,7 +7,12 @@
     
     <ul id="todos">
         {% for todo in todos %}
-            
+            <li>
+                <label for="todo_{{ todo.id }}">
+                    <input type="checkbox" id="todo_{{ todo.id }}" name="todo_{{ todo.id }}">    
+                    {{ todo.title }}    
+                </label>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}

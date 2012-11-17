@@ -41,7 +41,7 @@ body > form > *.uiWrapper {
   padding: 0 10px 0;
 }
 
-body > form > *.uiWrapper input {
+body > form > *.uiWrapper input[type=text] {
   width: 100%;
   box-sizing: border-box;
 }

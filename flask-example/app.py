@@ -4,6 +4,7 @@ from flask import Flask, render_template, request
 
 from models import connect
 from models.todo import Todo
+from forms.todo import TodoForm
 
 from formalchemy import FieldSet
 
@@ -15,19 +16,21 @@ def list():
         Le listing et le formulaire d'ajout de todo
     """
     db_session = connect(True)
-    
+    form = TodoForm(request.form)
+
+    if request.method == 'POST' and form.validate():
+        newTodo = Todo()
+        newTodo.title = form.title.data
+        newTodo.done = True if form.done else False
+
+        db_session.add(newTodo)
+        db_session.commit()
+
     data = {
         "todos" : db_session.query(Todo).all()
-        , "form" : FieldSet(Todo)
+        , "form" : form
     }
-
-    if request.method == 'POST':
-        form = FieldSet(Todo, data = request.form)
-
-        if form.validate():
-            form.sync()
-            db_session.commit()
-
+    
     return render_template("list.html", **data)
 
 @todos.route('/create', methods = ['PUT'])

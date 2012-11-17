@@ -1,6 +1,7 @@
 Jinja2      == 2.6
 Werkzeug    == 0.8.3
 SQLAlchemy  == 0.7.7
-FormAlchemy == 1.4.2
+WTForms     == 1.0.2
 pysqlite    == 2.6.3
 Flask       == 0.9
+Flask-WTF   == 0.8
