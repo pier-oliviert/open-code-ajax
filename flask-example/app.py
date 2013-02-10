@@ -21,7 +21,7 @@ def list():
 
     # GET de base pour obtenir les TODOS au départ
     data = {
-        "todos": db_session.query(Todo).all(),
+        "todos": db_session.query(Todo).filter_by(done=0).all(),
         "form": form
     }
 
@@ -38,7 +38,7 @@ def create():
         db_session = connect(True)
         newTodo = Todo()
         newTodo.title = form.title.data
-        newTodo.done = True if form.done else False
+        newTodo.done = False
 
         db_session.add(newTodo)
         db_session.commit()
@@ -67,9 +67,31 @@ def create():
     return "", 404
 
 
-@todos.route('/done', methods=['POST'])
-def done():
+@todos.route('/done/<pk>', methods=['DELETE'])
+def done(pk):
     # Controller pour rendre un TODO fait avec un post
-    # db_session = connect(True)
 
-    return "", 404
+    # todos.logger.error("done !")
+
+    # pk = request.args["pk"]
+
+    # todos.logger.error(request.args.keys())
+
+    if pk:
+        db_session = connect(True)
+        current_todo = db_session.query(Todo).filter_by(id=pk).first()
+
+        current_todo.done = True
+        db_session.commit()
+
+        data = {
+            "id": pk
+        }
+
+        js_response = make_response(
+            render_template("done.js", **data).replace("\n", "")
+        )
+        js_response.headers["Content-Type"] = "text/javascript; charset=utf-8"
+        return js_response
+
+    return "", 402

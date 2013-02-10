@@ -1,3 +1,3 @@
 (function() {
-	$("#todo-{{todo.id}}").remove()
+	$("#todo-{{id}}").remove()
 })()

@@ -34,12 +34,28 @@ var todos = function(){
                         url:"/create",
                         type: "PUT",
                         data: $("form").serialize(),
-                        complete: function(response, status){
-                            // console.log(response);
+                        complete : function(response){
+                            console.log(response);
                             // eval(response.responseText);
                         }
                     });
                 }
+                return false;
+            });
+
+            $("#todos input[type=checkbox]").live("mousedown", function(){
+                console.log("input[type=checkbox].mousedown !");
+
+                var id = $(this).attr("id").replace("todo_", "")
+
+                $.ajax({
+                    url:"/done/" + id,
+                    type: "DELETE",
+                    complete : function(response){
+                        console.log(response);
+                        // eval(response.responseText);
+                    }
+                });
                 return false;
             });
         }

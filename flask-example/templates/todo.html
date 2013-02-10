@@ -1,6 +1,6 @@
 <li id='todo-{{id}}'>
-<p>{{title}}</p>
-<form action='/todo/{{id}}/done' data-remote='true'>
-<button>Done</button>
-</form>
+<label for='todo_{{ id }}'>
+    <input type='checkbox' id='todo_{{ id }}' name='todo_{{ id }}'>
+    {{ title }}
+</label>
 </li>

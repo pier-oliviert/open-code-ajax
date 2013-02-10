@@ -4,13 +4,13 @@
     <h1>Todos</h1>
 
     {% include "form.html" %}
-    
+
     <ul id="todos">
         {% for todo in todos %}
-            <li>
+            <li id="todo-{{todo.id}}">
                 <label for="todo_{{ todo.id }}">
-                    <input type="checkbox" id="todo_{{ todo.id }}" name="todo_{{ todo.id }}">    
-                    {{ todo.title }}    
+                    <input type="checkbox" id="todo_{{ todo.id }}" name="todo_{{ todo.id }}">
+                    {{ todo.title }}
                 </label>
             </li>
         {% endfor %}
