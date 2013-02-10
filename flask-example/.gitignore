@@ -29,7 +29,13 @@ nosetests.xml
 # Translations
 *.mo
 
+# virtualenv
+venv
+
 # Mr Developer
 .mr.developer.cfg
 .project
 .pydevproject
+
+# sqlite database file
+*.db
