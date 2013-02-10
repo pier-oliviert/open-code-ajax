@@ -71,12 +71,6 @@ def create():
 def done(pk):
     # Controller pour rendre un TODO fait avec un post
 
-    # todos.logger.error("done !")
-
-    # pk = request.args["pk"]
-
-    # todos.logger.error(request.args.keys())
-
     if pk:
         db_session = connect(True)
         current_todo = db_session.query(Todo).filter_by(id=pk).first()
