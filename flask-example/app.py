@@ -1,16 +1,17 @@
 #coding: utf8
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 
 from models import connect
 from models.todo import Todo
 from forms.todo import TodoForm
 
-from formalchemy import FieldSet
+# from formalchemy import FieldSet
 
 todos = Flask(__name__)
 
-@todos.route('/', methods = ['GET', 'POST'])
+
+@todos.route('/', methods=['GET', 'POST'])
 def list():
     """
         Le listing et le formulaire d'ajout de todo
@@ -26,19 +27,38 @@ def list():
         db_session.add(newTodo)
         db_session.commit()
 
+        todo_data = {
+            "id": newTodo.id,
+            "title": newTodo.title,
+            "done": newTodo.done
+        }
+
+        data = {
+            "form": form,
+            "todo_html": render_template("todo.html", **todo_data)
+        }
+
+        js_response = make_response(render_template("list.js", **data))
+        js_response.headers["Content-Type"] = "text/javascript; charset=utf-8"
+
+        return js_response
+
+    # GET de base pour obtenir les TODOS au départ
     data = {
-        "todos" : db_session.query(Todo).all()
-        , "form" : form
+        "todos": db_session.query(Todo).all(),
+        "form": form
     }
-    
+
     return render_template("list.html", **data)
 
-@todos.route('/create', methods = ['PUT'])
+
+@todos.route('/create', methods=['PUT'])
 def create():
     # Controller de création d'un todo avec un PUT
     return "create"
 
-@todos.route('/done', methods = ['POST'])
+
+@todos.route('/done', methods=['POST'])
 def done():
     # Controller pour rendre un TODO fait avec un post
     return "done"
