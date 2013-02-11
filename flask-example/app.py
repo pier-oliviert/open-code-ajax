@@ -64,7 +64,7 @@ def create():
 
         return js_response
 
-    return "", 404
+    return "", 400
 
 
 @todos.route('/done/<pk>', methods=['DELETE'])
@@ -88,4 +88,4 @@ def done(pk):
         js_response.headers["Content-Type"] = "text/javascript; charset=utf-8"
         return js_response
 
-    return "", 402
+    return "", 400

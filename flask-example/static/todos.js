@@ -34,10 +34,7 @@ var todos = function(){
                         url:"/create",
                         type: "PUT",
                         data: $("form").serialize(),
-                        complete : function(response){
-                            console.log(response);
-                            // eval(response.responseText);
-                        }
+                        dataType: "script"
                     });
                 }
                 return false;
@@ -51,10 +48,7 @@ var todos = function(){
                 $.ajax({
                     url:"/done/" + id,
                     type: "DELETE",
-                    complete : function(response){
-                        console.log(response);
-                        // eval(response.responseText);
-                    }
+                    dataType: "script"
                 });
                 return false;
             });
