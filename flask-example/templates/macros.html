@@ -1,0 +1,8 @@
+{% macro todo_li(id='', title='') -%}
+<li id='todo-{{id}}'>
+<label for='todo_{{ id }}'>
+    <input type='checkbox' id='todo_{{ id }}' name='todo_{{ id }}'>
+    {{ title }}
+</label>
+</li>
+{%- endmacro %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from 'macros.html' import todo_li %}
+
+{% block content %}
+    <h1>Todos</h1>
+
+    {% include "form.html" %}
+
+    <ul id="todos">
+        {% for todo in todos %}
+            {{ todo_li(todo.id, todo.title) }}
+        {% endfor %}
+    </ul>
+{% endblock %}
